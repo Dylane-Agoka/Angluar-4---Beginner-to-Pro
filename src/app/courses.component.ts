@@ -3,17 +3,10 @@ import { Component } from "@angular/core";
 @Component({
   selector: 'courses',
   styleUrls: ['./courses.component.scss'],
-  // attribute binding : [attr.customPropertyName] = "item"
+  // add bootstrap: npm i bootstrap@version --save or npm i bootstrap --save
   template: `
-    <img [src]="" alt="">
-    <table>
-      <tr>
-        <td [attr.colspan]="colSpan"></td>
-      </tr>
-    </table>
+    <button class="btn btn-primary">Save</button>
   `
 })
 export class CoursesComponent {
-  imageUrl = '';
-  colSpan = 2;
 }
