@@ -3,11 +3,11 @@ import { Component } from "@angular/core";
 @Component({
   selector: 'courses',
   template: `
-    <input class="input" (keyup.enter)="onKeyUp()">
+    <input (keyup.enter)="onKeyUp($event)">
   `
 })
 export class CoursesComponent {
-  onKeyUp() {
-    console.log('Enter was pressed');
+  onKeyUp($event) {
+    console.log($event.target.value);
   }
 }
