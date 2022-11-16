@@ -2,22 +2,13 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'courses',
-  // event binding : (event)="method()"
-  // event bubbling : use ascendant order
   template: `
-  <div (click)="onDivClick()">
-    <button (click)="onSave($event)">Save</button>
-  </div>
+    <input class="input" (keyup)="onKeyUp($event)">
   `
 })
 export class CoursesComponent {
-  onDivClick() {
-    console.log('Div was clicked');
+  onKeyUp($event) {
+    if ($event.keyCode === 13) console.log('Enter was pressed');
 
-  }
-
-  onSave($event) {
-    $event.stopPropagation(); // stop event bubbling
-    console.log('Button was clicked', $event);
   }
 }
