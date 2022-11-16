@@ -5,8 +5,9 @@ import { Component } from "@angular/core";
   styleUrls: ['./courses.component.scss'],
   // add bootstrap: npm i bootstrap@version --save or npm i bootstrap --save
   template: `
-    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary" [class.active]="isActive">Save</button>
   `
 })
 export class CoursesComponent {
+  isActive = true;
 }
