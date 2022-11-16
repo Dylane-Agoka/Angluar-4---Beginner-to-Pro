@@ -2,11 +2,22 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'courses',
-  styleUrls: ['./courses.component.scss'],
+  // event binding : (event)="method()"
+  // event bubbling : use ascendant order
   template: `
-    <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
+  <div (click)="onDivClick()">
+    <button (click)="onSave($event)">Save</button>
+  </div>
   `
 })
 export class CoursesComponent {
-  isActive = false;
+  onDivClick() {
+    console.log('Div was clicked');
+
+  }
+
+  onSave($event) {
+    $event.stopPropagation(); // stop event bubbling
+    console.log('Button was clicked', $event);
+  }
 }
