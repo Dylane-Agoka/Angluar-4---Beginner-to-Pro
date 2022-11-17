@@ -7,17 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteComponent implements OnInit {
   constructor() { }
-  icons = ['bi bi-star', 'bi bi-star-fill'];
   isFavorite = false;
   ngOnInit(): void {
   }
 
   onClick() {
     this.isFavorite = !this.isFavorite;
-  }
-
-  targetIcon() {
-    return (this.isFavorite) ? this.icons[0] : this.icons[1];
   }
 
 }
