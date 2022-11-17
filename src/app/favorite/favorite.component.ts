@@ -16,4 +16,8 @@ export class FavoriteComponent implements OnInit {
     this.isFavorite = !this.isFavorite;
   }
 
+  targetIcon() {
+    return (this.isFavorite) ? this.icons[0] : this.icons[1];
+  }
+
 }
