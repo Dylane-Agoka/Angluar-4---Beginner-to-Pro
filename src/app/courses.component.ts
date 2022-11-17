@@ -1,21 +1,12 @@
+import { SummaryPipe } from './summary.pipe';
 import { Component } from "@angular/core";
 
 @Component({
   selector: 'courses',
   template: `
-    {{ course.title | uppercase | lowercase }} <br>
-    {{ course.students | number }} <br>
-    {{ course.rating | number:'1.2-3' }} <br>
-    {{ course.price | currency:'CAD':true:'3.2-2' }} <br>
-    {{ course.releaseDate | date:'shortDate' }}
+    {{ text | summary:10 }}
   `
 })
 export class CoursesComponent {
-  course = {
-    title: 'The complete Angular Course',
-    rating: 4.9745,
-    students: 30123,
-    price: 190.95,
-    releaseDate: new Date(2016, 3, 1)
-  }
+  text = 'Sit dolore sunt quis qui cillum labore est duis ut mollit sit elit elit. Nulla enim in voluptate cupidatat consectetur est voluptate ad elit excepteur. Aute ad Lorem quis ex ut nostrud mollit consectetur aliqua nisi ipsum voluptate. Tempor veniam ex sint aliquip fugiat. Pariatur Lorem incididunt et velit fugiat et fugiat.'
 }
