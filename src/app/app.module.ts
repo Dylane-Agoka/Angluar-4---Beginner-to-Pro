@@ -11,6 +11,7 @@ import { CoursesService } from './courses.service';
 import { AuthorsComponent } from './authors/authors/authors.component';
 import { FormsModule } from '@angular/forms';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { PrepositionsComponent } from './prepositions/prepositions.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
     CourseComponent,
     AuthorsComponent,
     SummaryPipe,
-    FavoriteComponent
+    FavoriteComponent,
+    PrepositionsComponent
   ],
   imports: [
     BrowserModule,
