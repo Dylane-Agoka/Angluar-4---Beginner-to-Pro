@@ -9,7 +9,7 @@ export class PrepositionsComponent implements OnInit {
 
   prepositionsList: string[] = [];
   prepositions: string[] = [];
-  uniquePrepositions: string[] = [];
+  public uniquePrepositions: string[] = [];
 
   englishPrepositions = {
     time: [
