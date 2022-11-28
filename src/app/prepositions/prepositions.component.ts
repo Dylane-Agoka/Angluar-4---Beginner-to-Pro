@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, createPlatform, OnInit } from '@angular/core';
 
 @Component({
   selector: 'prepositions',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prepositions.component.scss']
 })
 export class PrepositionsComponent implements OnInit {
+
+  prepositionsList: string[] = [];
+  prepositions: string[] = [];
+  uniquePrepositions: string[] = [];
 
   englishPrepositions = {
     time: [
@@ -43,16 +47,30 @@ export class PrepositionsComponent implements OnInit {
     ]
   };
 
-  getPropositionList(){
-    let prepositionsList: string[] = [];
+  constructor() {
     for (const property in this.englishPrepositions) {
-      prepositionsList.push(this.englishPrepositions[property]);
+      this.prepositionsList.push(this.englishPrepositions[property]);
     }
-  }
 
-  constructor() { }
+    this.prepositionsList.forEach(pre =>  this.prepositions.push(...pre));
+    this.prepositions.forEach(pre => !this.uniquePrepositions.includes(pre) && this.uniquePrepositions.push(pre));
+
+    const sentence = 'THe rise of the planet of the Apes';
+    // console.log(this.prepositionsList.flat()); Help to convert an array of array in array of 1 dimension
+    console.log(this.getTitleCase(sentence));
+
+  }
 
   ngOnInit(): void {
   }
 
+  getTitleCase(args: string) {
+    const words = args.split(' ');
+    let wordsL: string[] = [];
+    words.forEach(word =>
+      !this.uniquePrepositions.includes(word) ?
+      wordsL.push(word.charAt(0).toUpperCase() + word.slice(1)) :
+      wordsL.push(word.toLowerCase()));
+    return wordsL;
+  }
 }
