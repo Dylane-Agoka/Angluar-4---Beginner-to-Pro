@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PrepositionsComponent } from './prepositions/prepositions.component';
 import { TitleCasePipe } from './pipes/title-case.pipe';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TitleCasePipe } from './pipes/title-case.pipe';
     SummaryPipe,
     FavoriteComponent,
     PrepositionsComponent,
-    TitleCasePipe
+    TitleCasePipe,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
