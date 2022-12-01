@@ -1,6 +1,7 @@
 <span
   class="bi bi-heart-fill"
-  (click)="onClick()"
-  [style.color]="isActive ? '#CCC' : 'dodgerBlue'"
-  style="padding-right: 5px; cursor: pointer;"></span>
+  [class.highlighted]="isActive"
+  (click)="onClick()">
+</span>
+
 <span>{{ likesCount }}</span>
