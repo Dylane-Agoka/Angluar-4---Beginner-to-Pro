@@ -1,5 +1,4 @@
-<button class="btn btn-primary" (click)="addCourses()">Add</button>
-<button class="btn btn-danger" (click)="removeCourses()">Remove</button>
+<button class="btn btn-primary" (click)="loadCourses()">Load courses</button>
 <ul>
   <li *ngFor="let course of courses; even as isEven">
     {{ course.name }}
