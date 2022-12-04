@@ -1,6 +1,6 @@
 <button class="btn btn-primary" (click)="loadCourses()">Load courses</button>
 <ul>
-  <li *ngFor="let course of courses; trackCourse(course)">
+  <li *ngFor="let course of courses; trackCourse">
     {{ course.name }}
   <button class="btn btn-danger" (click)="onRemove(course)">Del</button>
   </li>
