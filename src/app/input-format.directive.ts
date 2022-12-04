@@ -4,7 +4,7 @@
   selector: '[appInputFormat]'
 })
 export class InputFormatDirective {
-  @Input('format') format;
+  @Input('appInputFormat') format;
   constructor(private elementRef: ElementRef) { }
 
   @HostListener('blur') onBlur() {
