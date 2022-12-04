@@ -11,4 +11,19 @@ export class AppComponent {
     { id: 1, name: 'English language' },
     { id: 1, name: 'Manual work' }
   ]
+
+  addCourses() {
+    const index = this.courses.length;
+    this.courses.push({id: index - 1, name: 'Software Engineer ' + index});
+  }
+
+
+  removeCourses() {
+    this.courses.pop();
+  }
+
+  onRemove(course) {
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
 }
