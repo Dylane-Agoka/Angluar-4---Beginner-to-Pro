@@ -3,6 +3,8 @@
 <span
   (click)="onClick()"
   class="bi"
-  [class.bi-star-fill] = "isSelected"
-  [class.bi-star] = "!isSelected"
+  [ngClass]="{
+    'bi-star': !isSelected,
+    'bi-star-fill': isSelected
+  }"
 ></span>
