@@ -15,6 +15,7 @@ import { PrepositionsComponent } from './prepositions/prepositions.component';
 import { TitleCasePipe } from './pipes/title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LikeComponent } from './like/like.component';
     PrepositionsComponent,
     TitleCasePipe,
     PanelComponent,
-    LikeComponent
+    LikeComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,
