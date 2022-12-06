@@ -8,12 +8,17 @@ export class UsernameValidators {
     return null;
   }
 
-  static shouldBeUnique(control: AbstractControl) : ValidationErrors | null {
-    setTimeout(() => {
-      if (control.value === 'mosh') {
-        return { shouldBeUnique: true };
-      }
-    }, 2000);
-    return null;
+  // TODO : Never forget to delete all Validators operators to use async Validators
+  static shouldBeUnique(control: AbstractControl) : Promise<ValidationErrors | null> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'mosh') {
+          resolve({ shouldBeUnique: true });
+        } else {
+          resolve(null);
+        }
+      }, 2000);
+    });
   }
 }
+
