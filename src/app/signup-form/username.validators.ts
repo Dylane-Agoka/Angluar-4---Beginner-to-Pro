@@ -7,4 +7,13 @@ export class UsernameValidators {
     }
     return null;
   }
+
+  static shouldBeUnique(control: AbstractControl) : ValidationErrors | null {
+    setTimeout(() => {
+      if (control.value === 'mosh') {
+        return { shouldBeUnique: true };
+      }
+    }, 2000);
+    return null;
+  }
 }
