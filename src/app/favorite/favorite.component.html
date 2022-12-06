@@ -1,0 +1,10 @@
+<br><br>
+<h5>Favorite component</h5>
+<span
+  (click)="onClick()"
+  class="bi"
+  [ngClass]="{
+    'bi-star': !isSelected,
+    'bi-star-fill': isSelected
+  }"
+></span>
