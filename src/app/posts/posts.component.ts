@@ -7,12 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent {
-  postsUrl = 'assets/posts.json';
+  private postsUrl = 'https://jsonplaceholder.typicode.com/posts';
   posts;
 
   constructor(private http: HttpClient) {
     this.http.get(this.postsUrl).subscribe(response => {
-      this.posts = response as JSON;
+      this.posts = response;
+    });
+  }
+
+  createPost(input: HTMLInputElement) {
+    let post = { title: input.value};
+    this.http.post(this.postsUrl, JSON.stringify(post))
+      .subscribe(() => {
+        this.posts.splice(0, 0, post);
     });
   }
 
