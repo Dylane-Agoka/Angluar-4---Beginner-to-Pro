@@ -32,4 +32,14 @@ export class PostsComponent {
       });
   }
 
+  deletePost(post) {
+    this.http.delete(this.postsUrl + '/' + post.id)
+      .subscribe(() => {
+        let index = this.posts.indexOf(post);
+        this.posts.splice(index, 1);
+        console.log(`${post.title} was deleted with successful.`);
+
+      });
+  }
+
 }
