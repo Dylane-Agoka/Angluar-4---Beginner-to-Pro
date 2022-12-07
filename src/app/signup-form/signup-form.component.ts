@@ -9,13 +9,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupFormComponent {
   form = new FormGroup({
-    account: new FormGroup({
-      username: new FormControl(''),
-      password: new FormControl('')
-    })
+    username: new FormControl('',
+      UsernameValidators.cannotContainSpace,
+      UsernameValidators.shouldBeUnique,
+    ),
+    password: new FormControl('', Validators.required)
   });
 
+  login() {
+    this.form.setErrors({
+      invalidLogin: true
+    });
+  }
+
   get username() {
-    return this.form.get('account.username');
+    return this.form.get('username');
   }
 }
