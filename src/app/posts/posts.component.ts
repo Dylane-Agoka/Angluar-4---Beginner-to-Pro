@@ -15,7 +15,11 @@ export class PostsComponent implements OnInit{
     this.postService.getPosts()
       .subscribe(response => {
         this.posts = response;
-    });
+      },
+      error => {
+        alert('An unexpected error occurred.');
+        console.log(error);
+      });
   }
 
   createPost(input: HTMLInputElement) {
@@ -24,13 +28,21 @@ export class PostsComponent implements OnInit{
     this.postService.createPost(post)
       .subscribe(() => {
         this.posts.splice(0, 0, post);
-    });
+      },
+      error => {
+        alert('An unexpected error occurred.');
+        console.log(error);
+      });
   }
 
   updatePost(post) {
     this.postService.updatePost(post)
       .subscribe(response => {
         console.log(response);
+      },
+      error => {
+        alert('An unexpected error occurred.');
+        console.log(error);
       });
   }
 
@@ -40,8 +52,10 @@ export class PostsComponent implements OnInit{
         let index = this.posts.indexOf(post);
         this.posts.splice(index, 1);
         console.log(`${post.title} was deleted with successful.`);
-
+      },
+      error => {
+        alert('An unexpected error occurred.');
+        console.log(error);
       });
   }
-
 }
