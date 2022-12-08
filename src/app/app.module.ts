@@ -1,3 +1,6 @@
+import { AppErrorHandler } from './common/app-error-handler';
+import { ErrorHandler } from '@angular/core';
+import { PostService } from './services/post.service';
 import { SummaryPipe } from './summary.pipe';
 import { AuthorsService } from './authors/authors.service';
 import { CoursesComponent } from './courses.component';
@@ -22,6 +25,8 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostsComponent } from './posts/posts.component'
 
 @NgModule({
   declarations: [
@@ -41,17 +46,21 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     ContactFormComponent,
     CreateCourseComponent,
     NewCourseFormComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     CoursesService,
-    AuthorsService
+    AuthorsService,
+    PostService,
+    { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })
