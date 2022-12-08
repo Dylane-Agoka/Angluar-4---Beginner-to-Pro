@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { SummaryPipe } from './summary.pipe';
 import { AuthorsService } from './authors/authors.service';
 import { CoursesComponent } from './courses.component';
@@ -55,7 +56,8 @@ import { PostsComponent } from './posts/posts.component'
   ],
   providers: [
     CoursesService,
-    AuthorsService
+    AuthorsService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
